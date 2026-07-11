@@ -18,11 +18,13 @@ import {
 const VERSION = "0.1.0";
 
 const HELP = `
-${c.bold("g3usage")} — Grok Build usage analysis (ccusage for Grok)
+${c.bold("G3usage")} — Grok Build usage analysis (ccusage for Grok)
+  npm package / CLI: g3usage
 
 ${c.bold("USAGE")}
   g3usage [daily] [options]
   g3usage <command> [options]
+  npx g3usage@latest
 
 ${c.bold("COMMANDS")}
   daily      Show usage grouped by date (default)
@@ -191,10 +193,10 @@ function alignFor(mode, noCost) {
 function printReport(mode, rows, opts) {
   const t = totals(rows);
   const titleMap = {
-    daily: "Grok Build Usage Report - Daily",
-    weekly: "Grok Build Usage Report - Weekly",
-    monthly: "Grok Build Usage Report - Monthly",
-    session: "Grok Build Usage Report - Session",
+    daily: "G3usage · Grok Build — Daily",
+    weekly: "G3usage · Grok Build — Weekly",
+    monthly: "G3usage · Grok Build — Monthly",
+    session: "G3usage · Grok Build — Session",
   };
 
   const headers = headersFor(mode, opts.noCost);

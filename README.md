@@ -1,8 +1,10 @@
 <div align="center">
 
-# g3usage
+# G3usage
 
 ### ccusage — but for **Grok Build**
+
+> npm package & CLI: [`g3usage`](https://www.npmjs.com/package/g3usage)
 
 Local CLI that turns your `~/.grok` session logs into **daily / weekly / monthly / session** reports with estimated tokens & API-equivalent cost.
 
@@ -23,11 +25,11 @@ npx g3usage@latest
 
 ---
 
-## Why g3usage?
+## Why G3usage?
 
 If you use [Grok Build](https://x.ai/build) heavily, you eventually want the same visibility [ccusage](https://github.com/ccusage/ccusage) gives Claude / Codex users:
 
-| Question | g3usage answer |
+| Question | G3usage answer |
 |----------|----------------|
 | How many tokens did I burn this week? | `g3usage weekly` |
 | Which days were expensive? | `g3usage daily` |
@@ -67,7 +69,7 @@ npm install -g g3usage
 
 g3usage
 g3usage weekly
-g3usage session -s 2026-07-01
+g3usage session -s 2026-03-01
 ```
 
 ### From source
@@ -84,26 +86,28 @@ Requires **Node.js 18+**.
 
 ## Example output
 
+_Sample only — dummy numbers, not real usage._
+
 ```text
 ╭───────────────────────────────────────────────────────────╮
 │ Grok Build Usage Report - Daily                           │
 ╰───────────────────────────────────────────────────────────╯
 
-┌────────────┬──────────────────────────────────┬────────────┬───────────┬────────────┬──────────┬────────────┐
-│ Date       │ Models                           │      Input │    Output │      Total │ Sessions │ Cost (USD) │
-├────────────┼──────────────────────────────────┼────────────┼───────────┼────────────┼──────────┼────────────┤
-│ 2026-07-09 │ grok-4.5, grok-composer-2.5-fast │  6,121,183 │   754,221 │  6,875,404 │        6 │     $17.38 │
-│ 2026-07-10 │ grok-4.5, grok-composer-2.5-fast │  6,916,118 │ 1,156,478 │  8,072,596 │       14 │     $20.89 │
-│ 2026-07-11 │ grok-4.5                         │    750,706 │   135,619 │    886,325 │        2 │      $2.32 │
-├────────────┼──────────────────────────────────┼────────────┼───────────┼────────────┼──────────┼────────────┤
-│ Total      │ …                                │ 13,788,007 │ 2,046,318 │ 15,834,325 │       22 │     $40.59 │
-└────────────┴──────────────────────────────────┴────────────┴───────────┴────────────┴──────────┴────────────┘
+┌────────────┬──────────────────────────────────┬───────────┬──────────┬───────────┬──────────┬────────────┐
+│ Date       │ Models                           │     Input │   Output │     Total │ Sessions │ Cost (USD) │
+├────────────┼──────────────────────────────────┼───────────┼──────────┼───────────┼──────────┼────────────┤
+│ 2026-03-12 │ grok-4.5                         │   412,500 │   88,200 │   500,700 │        4 │      $1.35 │
+│ 2026-03-13 │ grok-4.5, grok-composer-2.5-fast │   980,000 │  210,000 │ 1,190,000 │        7 │      $5.12 │
+│ 2026-03-14 │ grok-composer-2.5-fast           │   256,000 │   64,000 │   320,000 │        3 │      $1.73 │
+├────────────┼──────────────────────────────────┼───────────┼──────────┼───────────┼──────────┼────────────┤
+│ Total      │ grok-4.5, grok-composer-2.5-fast │ 1,648,500 │  362,200 │ 2,010,700 │       14 │      $8.20 │
+└────────────┴──────────────────────────────────┴───────────┴──────────┴───────────┴──────────┴────────────┘
 
   Costs are API-equivalent estimates. SuperGrok / subscription usage may not bill per token.
   Input/Output estimated from cumulative context sizes in local session logs.
 ```
 
-> Your numbers will differ — this is illustrative sample output from real local sessions.
+> Numbers above are **fake demo data** for the README. Run `npx g3usage@latest` to see your own local totals.
 
 ---
 
@@ -133,7 +137,7 @@ Requires **Node.js 18+**.
 
 ```bash
 # Last few days only
-g3usage daily -s 2026-07-01 -u 2026-07-11
+g3usage daily -s 2026-03-01 -u 2026-03-14
 
 # Tokyo calendar days
 g3usage daily -z Asia/Tokyo
@@ -154,7 +158,7 @@ g3usage --path /path/to/grok-home daily
 
 ### Data source
 
-g3usage walks:
+G3usage walks:
 
 ```text
 $GROK_HOME/sessions/<project>/<session-id>/
@@ -175,7 +179,7 @@ Nothing is sent to the network. Pricing tables are **bundled** in the package (n
 
 Grok Build currently records a **cumulative context size** as `_meta.totalTokens` on session updates — **not** a clean billed split of input / output / cache.
 
-For each user turn (`promptId`), g3usage approximates:
+For each user turn (`promptId`), G3usage approximates:
 
 | Metric | Formula | Meaning |
 |--------|---------|---------|
@@ -220,7 +224,7 @@ Unknown models fall back to **Grok 4.5** rates (`$2 / $6`).
 ## JSON output
 
 ```bash
-g3usage daily --json -s 2026-07-11
+g3usage daily --json -s 2026-03-12
 ```
 
 Shape (simplified):
@@ -228,26 +232,26 @@ Shape (simplified):
 ```json
 {
   "command": "daily",
-  "timezone": "Africa/Tunis",
+  "timezone": "America/New_York",
   "grokHome": "/Users/you/.grok",
   "sessionsPath": "/Users/you/.grok/sessions",
   "totals": {
-    "inputTokens": 750706,
-    "outputTokens": 135619,
-    "totalTokens": 886325,
-    "cost": 2.32,
+    "inputTokens": 412500,
+    "outputTokens": 88200,
+    "totalTokens": 500700,
+    "cost": 1.35,
     "models": ["grok-4.5"],
-    "sessions": 2
+    "sessions": 4
   },
   "rows": [
     {
-      "key": "2026-07-11",
-      "inputTokens": 750706,
-      "outputTokens": 135619,
-      "totalTokens": 886325,
-      "cost": 2.32,
+      "key": "2026-03-12",
+      "inputTokens": 412500,
+      "outputTokens": 88200,
+      "totalTokens": 500700,
+      "cost": 1.35,
       "models": ["grok-4.5"],
-      "sessions": 2
+      "sessions": 4
     }
   ]
 }
@@ -291,7 +295,7 @@ g3usage/
 
 ## Comparison
 
-| | [ccusage](https://github.com/ccusage/ccusage) | **g3usage** |
+| | [ccusage](https://github.com/ccusage/ccusage) | **G3usage** |
 |--|-----------------------------------------------|-------------|
 | Focus | Many coding agents (Claude, Codex, …) | **Grok Build only** |
 | Data | Agent-specific local logs | `~/.grok/sessions` |
@@ -351,7 +355,7 @@ npx g3usage@latest
 
 <div align="center">
 
-**Built for people who live in the terminal with Grok.**
+**G3usage — built for people who live in the terminal with Grok.**
 
 `npx g3usage@latest`
 

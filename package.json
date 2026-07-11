@@ -1,7 +1,7 @@
 {
   "name": "g3usage",
   "version": "0.1.0",
-  "description": "Analyze Grok Build token usage and estimated costs from local session data (ccusage for Grok)",
+  "description": "G3usage — analyze Grok Build token usage and estimated costs from local session data (ccusage for Grok)",
   "type": "module",
   "bin": {
     "g3usage": "bin/g3usage.js"
