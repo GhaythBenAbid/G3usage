@@ -39,10 +39,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GhaythBenAbid/g3usage.git"
+    "url": "git+https://github.com/GhaythBenAbid/G3usage.git"
   },
   "bugs": {
-    "url": "https://github.com/GhaythBenAbid/g3usage/issues"
+    "url": "https://github.com/GhaythBenAbid/G3usage/issues"
   },
-  "homepage": "https://github.com/GhaythBenAbid/g3usage#readme"
+  "homepage": "https://github.com/GhaythBenAbid/G3usage#readme"
 }

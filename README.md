@@ -98,8 +98,8 @@ g3usage session -s 2026-03-01
 ### From source
 
 ```bash
-git clone https://github.com/GhaythBenAbid/g3usage.git
-cd g3usage
+git clone https://github.com/GhaythBenAbid/G3usage.git
+cd G3usage
 
 # Node
 node bin/g3usage.js daily
