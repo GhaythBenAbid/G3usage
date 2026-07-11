@@ -1,10 +1,16 @@
 <div align="center">
 
-# G3usage
+<img src="assets/logo.png" alt="G3usage" width="180" />
+
+# <img src="assets/icon.png" alt="" width="42" height="42" align="absmiddle" /> G3usage
 
 ### ccusage — but for **Grok Build**
 
-> npm package & CLI: [`g3usage`](https://www.npmjs.com/package/g3usage)
+<p>
+  <img src="assets/icon-64.png" alt="" width="20" height="20" align="absmiddle" />
+  &nbsp;<strong>npm package</strong>
+  <code><a href="https://www.npmjs.com/package/g3usage">g3usage</a></code>
+</p>
 
 Local CLI that turns your `~/.grok` session logs into **daily / weekly / monthly / session** reports with estimated tokens & API-equivalent cost.
 
