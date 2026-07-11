@@ -15,10 +15,13 @@
   ],
   "scripts": {
     "start": "node bin/g3usage.js",
+    "start:bun": "bun bin/g3usage.js",
+    "g3usage": "node bin/g3usage.js",
     "prepublishOnly": "node bin/g3usage.js --version"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=18",
+    "bun": ">=1.0.0"
   },
   "keywords": [
     "grok",
@@ -28,7 +31,9 @@
     "tokens",
     "cli",
     "ccusage",
-    "cost"
+    "cost",
+    "bun",
+    "bunx"
   ],
   "author": "",
   "license": "MIT",

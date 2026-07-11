@@ -18,6 +18,7 @@ Local CLI that turns your `~/.grok` session logs into **daily / weekly / monthly
 
 [![npm version](https://img.shields.io/npm/v/g3usage?color=111827&labelColor=f9fafb&style=for-the-badge)](https://www.npmjs.com/package/g3usage)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Bun](https://img.shields.io/badge/bun-%3E%3D1.0-fbf0df?style=for-the-badge&logo=bun&logoColor=black)](https://bun.sh)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](./LICENSE)
 [![Zero deps](https://img.shields.io/badge/dependencies-0-success?style=for-the-badge)](#-features)
 
@@ -25,6 +26,8 @@ Local CLI that turns your `~/.grok` session logs into **daily / weekly / monthly
 
 ```bash
 npx g3usage@latest
+# or
+bunx g3usage@latest
 ```
 
 </div>
@@ -53,7 +56,7 @@ If you use [Grok Build](https://x.ai/build) heavily, you eventually want the sam
 - **Date filters & timezones** — `--since` / `--until` / `--timezone`
 - **Model-aware pricing** — Grok 4.5, Composer 2.5 Fast/Standard, grok-build, …
 - **Zero runtime dependencies** — single small npm package (~10 KB)
-- **One-liner install** — `npx g3usage@latest`
+- **Node & Bun** — `npx` / `bunx` / global install, same binary
 
 ---
 
@@ -61,17 +64,31 @@ If you use [Grok Build](https://x.ai/build) heavily, you eventually want the sam
 
 ### Run without installing
 
+**npm / Node**
+
 ```bash
 npx g3usage@latest
 npx g3usage@latest daily
-npx g3usage@latest monthly
 npx g3usage@latest session --json
+```
+
+**Bun** (same package, native runtime)
+
+```bash
+bunx g3usage@latest
+bunx g3usage@latest daily
+bunx g3usage@latest monthly
+bunx g3usage@latest session --json
 ```
 
 ### Install globally
 
 ```bash
+# npm
 npm install -g g3usage
+
+# bun
+bun install -g g3usage
 
 g3usage
 g3usage weekly
@@ -83,10 +100,17 @@ g3usage session -s 2026-03-01
 ```bash
 git clone https://github.com/GhaythBenAbid/g3usage.git
 cd g3usage
+
+# Node
 node bin/g3usage.js daily
+
+# Bun
+bun bin/g3usage.js daily
+# or
+bun run start:bun -- daily
 ```
 
-Requires **Node.js 18+**.
+Requires **Node.js 18+** or **Bun 1.0+**. Zero dependencies either way.
 
 ---
 

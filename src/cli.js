@@ -19,12 +19,13 @@ const VERSION = "0.1.0";
 
 const HELP = `
 ${c.bold("G3usage")} — Grok Build usage analysis (ccusage for Grok)
-  npm package / CLI: g3usage
+  npm package / CLI: g3usage  ·  Node & Bun
 
 ${c.bold("USAGE")}
   g3usage [daily] [options]
   g3usage <command> [options]
   npx g3usage@latest
+  bunx g3usage@latest
 
 ${c.bold("COMMANDS")}
   daily      Show usage grouped by date (default)
