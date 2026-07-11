@@ -1,0 +1,42 @@
+{
+  "name": "g3usage",
+  "version": "0.1.0",
+  "description": "Analyze Grok Build token usage and estimated costs from local session data (ccusage for Grok)",
+  "type": "module",
+  "bin": {
+    "g3usage": "bin/g3usage.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/g3usage.js",
+    "prepublishOnly": "node bin/g3usage.js --version"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "grok",
+    "xai",
+    "grok-build",
+    "usage",
+    "tokens",
+    "cli",
+    "ccusage",
+    "cost"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_USER/g3usage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USER/g3usage/issues"
+  },
+  "homepage": "https://github.com/YOUR_USER/g3usage#readme"
+}
